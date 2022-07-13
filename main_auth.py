@@ -3,11 +3,19 @@ from random import randint
 
 def attack(char_name, char_class):
     if char_class == 'warrior':
-        return ('{0} нанес урон противнику равный {1}'.format(char_name, 5 + randint(3, 5)))
+        return (
+            f'{char_name} нанес урон противнику равный {5 + randint(3, 5)}'
+        )
     if char_class == 'mage':
-        return (f'{char_name} нанес урон противнику равный {5 + randint(5, 10)}')
+        return (
+            f'{char_name} нанес урон противнику равный {5 + randint(5, 10)}'
+        )
     if char_class == 'healer':
-        return (f'{char_name} нанес урон противнику равный {5 + randint(-3, -1)}')
+        return (
+            f'{char_name} нанес урон противнику равный {5 + randint(-3, -1)}'
+        )
+
+
 def defence(char_name, char_class):
     if char_class == 'warrior':
         return (f'{char_name} блокировал {10 + randint(5, 10)} урона')
@@ -15,15 +23,18 @@ def defence(char_name, char_class):
         return (f'{char_name} блокировал {10 + randint(-2, 2)} урона')
     if char_class == 'healer':
         return (f'{char_name} блокировал {10 + randint(2, 5)} урона')
+
+
 def special(char_name, char_class):
     if char_class == 'warrior':
-        return (f'{char_name} примернил специальное умение  - выпосливось {80 + 25}')
+        return (
+            f'{char_name} примернил специальное '
+            'умение  - выпосливось {80 + 25}'
+        )
     if char_class == 'mage':
         return (f'{char_name} примернил специальное умение -  атака {5 + 40}')
     if char_class == 'healer':
         return (f'{char_name} примернил специальное умение - защита {10 + 30}')
-
-
 
 
 def start_training(char_name, char_class):
@@ -34,7 +45,11 @@ def start_training(char_name, char_class):
     if char_class == 'healer':
         print(f'{char_name}, ты Лекарь - чародей способный исцелять раны.')
     print('Теперь можно потренироваться в управлении полученными навыками.')
-    print('Введи одну из команд: attack для проведения атаки, defence - блокирование атаки противника и special - активация специальной возможности класса.')
+    print(
+        'Введи одну из команд: attack для проведения атаки, '
+        'defence - блокирование атаки противника и special '
+        '- активация специальной возможности класса.'
+    )
     print('Чтобы пропустить тренировку введите - skip')
     cmd = None
     while cmd != 'skip':
@@ -47,18 +62,24 @@ def start_training(char_name, char_class):
             print(special(char_name, char_class))
     return 'Тренировка окончена'
 
+
 def choice_char_class():
     approve_choice = None
     char_class = None
     while approve_choice != 'y':
-        char_class = input('Для выбора класса персонажа введите его название (warrior, mage, healer): ')
+        char_class = input(
+            'Для выбора класса персонажа введите его '
+            'название (warrior, mage, healer): '
+        )
         if char_class == 'warrior':
             print('Описание воителя ....')
         if char_class == 'mage':
             print('Описание мага ....')
         if char_class == 'healer':
             print('Опиание лекаря ....')
-        approve_choice = input('Подтвердите (Y) или повторите (any key) выбор ').lower()
+        approve_choice = input(
+            'Подтвердите (Y) или повторите (any key) выбор '
+        ).lower()
     return char_class
 
 
@@ -72,6 +93,6 @@ def main():
     print('Воитель, Маг, Лекарь')
     char_class = choice_char_class()
     print(start_training(char_name, char_class))
-    
+
 
 main()
