@@ -16,7 +16,7 @@ def defence(char_name, char_class):
     if char_class == 'healer':
         return (f'{char_name} блокировал {10 + randint(2, 5)} урона')
 def special(char_name, char_class):
-    if char_class == 'warior':
+    if char_class == 'warior': 
         return (f'{char_name} примернил специальное умение  - выпосливось {80 + 25}')
     if char_class == 'mage':
         return (f'{char_name} примернил специальное умение -  атака {5 + 40}')
