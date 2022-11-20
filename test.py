@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 def start_training(char_name, char_class):
 
     # Transfer character description to JSON
@@ -19,3 +20,15 @@ def start_training(char_name, char_class):
         if cmd == 'special':
             print(special(char_name, char_class))
     return 'Тренировка окончена.'
+=======
+# coding: utf-8
+import json
+import os
+
+choice_class = os.path.join(os.path.dirname(__file__), 'choice_class.txt')
+with open(choice_class) as f:
+     
+     info = json.loads(f.read())
+
+print(info['warrior'])
+>>>>>>> d568a2c1e99a655e05fa95aaec28ac107e2282b7
